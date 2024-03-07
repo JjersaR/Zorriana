@@ -12,16 +12,16 @@ CREATE TABLE Usuarios(
   Num_Celular varchar(15) NOT NULL,
   Fecha_Creacion DATETIME NOT NULL,
   Ultimo_Inicio_Sesion DATETIME NOT NULL,
-  ADD CONSTRAINT PK_Usuario_ID PRIMARY KEY(Usuario_ID),
-  ADD CONSTRAINT UQ_Username UNIQUE(Username),
-  ADD CONSTRAINT UQ_Correo UNIQUE(Correo),
+  CONSTRAINT PK_Usuario_ID PRIMARY KEY(Usuario_ID),
+  CONSTRAINT UQ_Username UNIQUE(Username),
+  CONSTRAINT UQ_Correo UNIQUE(Correo),
 );
 
 CREATE TABLE Generos(
   Genero_ID int IDENTITY(1,1),
   Genero varchar(50) NOT NULL,
-  ADD CONSTRAINT PK_Genero_ID PRIMARY KEY(Genero_ID),
-  ADD CONSTRAINT UQ_Genero UNIQUE(Genero)
+  CONSTRAINT PK_Genero_ID PRIMARY KEY(Genero_ID),
+  CONSTRAINT UQ_Genero UNIQUE(Genero)
 );
 
 CREATE TABLE Usarios_Datos_Personales(
@@ -32,9 +32,9 @@ CREATE TABLE Usarios_Datos_Personales(
   Apellido_Materno varchar(50) NOT NULL,
   Fecha_Nacimiento date NOT NULL,
   Genero_ID int NOT NULL,
-  ADD CONSTRAINT PK_Usuarios_Datos_Personales_ID PRIMARY KEY(Usuarios_Datos_Personales_ID),
-  ADD CONSTRAINT FK_Usuario_ID FOREIGN KEY(Usuario_ID) REFERENCES Usuarios(Usuario_ID),
-  ADD CONSTRAINT FK_Genero_ID FOREIGN KEY(Genero_ID) REFERENCES Generos(Genero_ID)
+  CONSTRAINT PK_Usuarios_Datos_Personales_ID PRIMARY KEY(Usuarios_Datos_Personales_ID),
+  CONSTRAINT FK_Usuario_ID FOREIGN KEY(Usuario_ID) REFERENCES Usuarios(Usuario_ID),
+  CONSTRAINT FK_Genero_ID FOREIGN KEY(Genero_ID) REFERENCES Generos(Genero_ID)
 );
 
 go;
