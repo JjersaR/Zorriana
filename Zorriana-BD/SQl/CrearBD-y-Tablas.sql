@@ -72,13 +72,11 @@ CREATE TABLE Articulos(
   Articulo_ID int IDENTITY(1,1),
   Nombre varchar(50) NOT NULL,
   Descripcion varchar(500) NOT NULL,
-  Categoria_X_Articulo_ID int NOT NULL,
   Disponible bit NOT NULL,
   Precio decimal(10,2) NOT NULL,
   Num_Veces_Vendido int NOT NULL,
   Link_Imagen varchar(500) NOT NULL,
   CONSTRAINT PK_Articulo_ID PRIMARY KEY(Articulo_ID),
-  
 );
 
 CREATE TABLE Categorias_X_Articulos(
@@ -89,9 +87,6 @@ CREATE TABLE Categorias_X_Articulos(
   CONSTRAINT FK_Categoria_ID FOREIGN KEY(Categoria_ID) REFERENCES Categorias(Categoria_ID),
   CONSTRAINT FK_Articulo_ID FOREIGN KEY(Articulo_ID) REFERENCES Articulos(Articulo_ID)
 );
-
-ALTER TABLE Articulos
-ADD CONSTRAINT FK_Categoria_X_Articulo_ID FOREIGN KEY(Categoria_X_Articulo_ID) REFERENCES Categorias_X_Articulos(Categoria_X_Articulo_ID);
 
 GO;
 
