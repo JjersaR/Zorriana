@@ -88,9 +88,6 @@ CREATE TABLE Categorias_X_Articulos(
   CONSTRAINT FK_Articulo_ID FOREIGN KEY(Articulo_ID) REFERENCES Articulos(Articulo_ID)
 );
 
-ALTER TABLE Articulos
-ADD CONSTRAINT FK_Categoria_X_Articulo_ID FOREIGN KEY(Categoria_X_Articulo_ID) REFERENCES Categorias_X_Articulos(Categoria_X_Articulo_ID);
-
 GO;
 
 --Tablas de Ventas
