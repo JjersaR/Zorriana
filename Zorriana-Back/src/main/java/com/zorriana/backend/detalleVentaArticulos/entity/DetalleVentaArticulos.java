@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.math.BigDecimal;
-import java.util.List;
+
 import lombok.Data;
 
 @Entity
@@ -31,7 +31,7 @@ public class DetalleVentaArticulos {
   // FK de Articulo
   @ManyToOne
   @JoinColumn(name = "Articulo_ID", nullable = false)
-  private List<Articulos> articulos;
+  private Articulos articulos;
 
   @Column(name = "Cantidad", nullable = false)
   private int cantidad;

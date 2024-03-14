@@ -17,6 +17,6 @@ public class Categorias {
   @Column(name = "Categoria_ID", unique = false)
   private Long categoriaID;
 
-  @Column(name = "Nombre_Categoria", length = 50, nullable = false)
+  @Column(name = "Nombre_Categoria", length = 100, nullable = false)
   private String nombre;
 }

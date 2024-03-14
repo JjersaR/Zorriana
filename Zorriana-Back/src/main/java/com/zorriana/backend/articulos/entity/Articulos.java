@@ -19,10 +19,10 @@ public class Articulos {
   @Column(name = "Articulo_ID")
   private Long ArticuloID;
 
-  @Column(name = "Nombre", length = 50, nullable = false)
+  @Column(name = "Nombre", length = 100, nullable = false)
   private String nombre;
 
-  @Column(name = "Descripcion", length = 50, nullable = false)
+  @Column(name = "Descripcion", length = 500, nullable = false)
   private String descripcion;
 
   @Column(name = "Disponible", nullable = false)

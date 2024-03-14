@@ -2,14 +2,8 @@ package com.zorriana.backend.rolesUsuario.entity;
 
 import com.zorriana.backend.roles.entity.Roles;
 import com.zorriana.backend.usuarios.entity.Usuarios;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 @Data
 @Entity
