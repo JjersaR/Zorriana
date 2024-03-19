@@ -1,12 +1,11 @@
 package com.zorriana.backend.articulos.entity;
 
-import java.math.BigDecimal;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.math.BigDecimal;
 import lombok.Data;
 
 @Entity
@@ -17,7 +16,7 @@ public class Articulos {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Articulo_ID")
-  private Long ArticuloID;
+  private long ArticuloID;
 
   @Column(name = "Nombre", length = 100, nullable = false)
   private String nombre;
@@ -32,7 +31,7 @@ public class Articulos {
   private BigDecimal precio;
 
   @Column(name = "Num_Veces_Vendido", nullable = false)
-  private Long numVecesVendido;
+  private long numVecesVendido;
 
   @Column(name = "Link_Imagen", length = 500, nullable = false)
   private String linkImagen;

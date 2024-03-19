@@ -13,7 +13,7 @@ public class RolesUsuario {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Rol_X_Usuario_ID")
-  private Long rolUsuarioID;
+  private long rolUsuarioID;
 
   // FK de Usuarios
   @ManyToOne

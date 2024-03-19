@@ -14,7 +14,7 @@ public class DatosPersonales {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Usuarios_Datos_Personales_ID")
-  private Long usuarioID;
+  private long usuarioID;
 
   // FK de Usuarios
   @OneToOne(targetEntity = Usuarios.class)

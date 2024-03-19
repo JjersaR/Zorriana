@@ -20,7 +20,7 @@ public class VentaArticulos {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Venta_Articulo_ID")
-  private Long ventaArticuloID;
+  private long ventaArticuloID;
 
   // FK de usuarios
   @ManyToOne

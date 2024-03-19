@@ -7,13 +7,13 @@ import lombok.Data;
 @Entity
 public class Generos {
 
-    // PK
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "genero_ID")
-    private Long generoID;
+  // PK
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "genero_ID")
+  private long generoID;
 
-    // genero
-    @Column(length = 50, nullable = false, unique = true)
-    private String genero;
+  // genero
+  @Column(length = 50, nullable = false, unique = true)
+  private String genero;
 }

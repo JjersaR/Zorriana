@@ -16,7 +16,7 @@ public class CategoriasArticulos {
   // PK
   @Id
   @Column(name = "Categoria_X_Articulo_ID")
-  private Long categoriaXArticuloID;
+  private long categoriaXArticuloID;
 
   // FK de categorias
   @ManyToOne

@@ -10,7 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.math.BigDecimal;
-
 import lombok.Data;
 
 @Entity
@@ -21,7 +20,7 @@ public class DetalleVentaArticulos {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Detalle_Venta_ID")
-  private Long detalleVentaID;
+  private long detalleVentaID;
 
   // FK de VentaArticulos
   @ManyToOne
