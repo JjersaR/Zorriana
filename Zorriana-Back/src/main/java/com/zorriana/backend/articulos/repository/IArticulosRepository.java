@@ -13,8 +13,8 @@ public interface IArticulosRepository extends JpaRepository<Articulos, Long> {
   @Transactional
   @Query("UPDATE Articulos a SET a.nombre = :#{#articulo.nombre}, a.descripcion ="
       + " :#{#articulo.descripcion}, a.disponible = :#{#articulo.disponible}, a.precio ="
-      + " :#{#articulo.precio}, a.linkImagen = :#{#articulo.linkImagen} WHERE a.id ="
-      + " :#{#articulo.id}")
+      + " :#{#articulo.precio}, a.linkImagen = :#{#articulo.linkImagen} WHERE a.ArticuloID ="
+      + " :#{#articulo.ArticuloID}")
   @Modifying
   void update(Articulos articulo);
 }
