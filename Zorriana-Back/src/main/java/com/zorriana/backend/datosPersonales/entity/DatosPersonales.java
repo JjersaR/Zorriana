@@ -14,12 +14,11 @@ public class DatosPersonales {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Usuarios_Datos_Personales_ID")
-  private Long usuarioID;
+  private long usuarioID;
 
   // FK de Usuarios
-  @Column(nullable = false)
   @OneToOne(targetEntity = Usuarios.class)
-  @JoinColumn(name = "Usuario_ID")
+  @JoinColumn(name = "Usuario_ID", referencedColumnName = "Usuario_ID")
   private Usuarios usuario;
 
   // Nombre
@@ -35,7 +34,7 @@ public class DatosPersonales {
   private String apellidoMaterno;
 
   // fecha de nacimiento
-  @Column(length = 50, nullable = false, columnDefinition = "DATE")
+  @Column(nullable = false, columnDefinition = "DATE")
   private LocalDate fechaNacimiento;
 
   // FK genero
