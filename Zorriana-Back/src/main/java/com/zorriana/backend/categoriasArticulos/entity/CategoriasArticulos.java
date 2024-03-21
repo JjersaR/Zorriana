@@ -1,5 +1,7 @@
 package com.zorriana.backend.categoriasArticulos.entity;
 
+import java.util.List;
+
 import com.zorriana.backend.articulos.entity.Articulos;
 import com.zorriana.backend.categorias.entity.Categorias;
 import jakarta.persistence.Column;
@@ -26,5 +28,5 @@ public class CategoriasArticulos {
   // FK de articulos
   @ManyToOne
   @JoinColumn(name = "Articulo_ID", nullable = false)
-  private Articulos articulo;
+  private List<Articulos> articulo;
 }
