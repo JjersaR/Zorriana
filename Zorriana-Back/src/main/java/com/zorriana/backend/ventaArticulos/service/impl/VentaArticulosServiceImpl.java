@@ -16,7 +16,7 @@ public class VentaArticulosServiceImpl implements IVentaArticulosService {
 
   @Override
   public List<VentaArticulos> findByIdUsuario(Long idUsuario) {
-    return repository.findByUsuarioID(idUsuario);
+    return repository.findByUsuarioUsuarioID(idUsuario);
   }
 
 }

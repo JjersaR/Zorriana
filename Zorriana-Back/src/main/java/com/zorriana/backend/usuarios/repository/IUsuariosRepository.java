@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Repository
 public interface IUsuariosRepository extends JpaRepository<Usuarios, Long> {
 
@@ -16,4 +18,6 @@ public interface IUsuariosRepository extends JpaRepository<Usuarios, Long> {
       + " :#{#usuario.telefono} WHERE u.usuarioID = :#{#usuario.usuarioID}")
   @Modifying
   void update(Usuarios usuario);
+
+  Optional<Usuarios> findByUsername(String username);
 }
