@@ -36,6 +36,9 @@ public class UsuariosServiceImpl implements IUsuariosService {
 
   @Override
   public void deleteById(Long id) {
-    repository.deleteById(id);
+    Optional<Usuarios> usOp = repository.findById(id);
+    if (usOp.isPresent()) {
+      repository.deleteById(id);
+    }
   }
 }
