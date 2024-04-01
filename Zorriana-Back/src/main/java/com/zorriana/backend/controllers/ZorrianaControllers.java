@@ -23,9 +23,4 @@ public class ZorrianaControllers {
         var listaArticulos = articulosService.findAll();
         return listaArticulos.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(IArticulosMapper.INSTANCE.toDTOListarArt(listaArticulos));
     }
-
-    @GetMapping("/admin")
-    public ResponseEntity<?> seguridad() {
-        return ResponseEntity.ok("Bienvenido ADMIN");
-    }
 }
