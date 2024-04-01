@@ -7,18 +7,15 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -28,11 +25,8 @@ public class SecurityConfig {
     @Bean // filtros
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
         return security
+                .httpBasic(Customizer.withDefaults()) // se usa para poder ocupar postman
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(http -> {
-                    http.requestMatchers(HttpMethod.GET, "/zorriana/tienda").hasAnyRole("CLIENTE", "VISITANTE");
-                    http.requestMatchers(HttpMethod.POST, "/zorriana/admin").hasRole("ADMIN");
-                })
                 .build();
     }
 
