@@ -1,32 +1,87 @@
 package com.zorriana.backend.articulos.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
-@Getter
-public class ListarArticulos implements Serializable {
+
+public class ListarArticulos {
     // obtener id sin mostrar
-    long ArticuloID;
+    @JsonIgnore
+    private long ArticuloID;
 
     // obtener nombre
-    String nombre;
+    private String nombre;
 
     // obtener descripcion
-    String descripcion;
+    private String descripcion;
 
     // SI esta disponible
-    boolean disponible;
+    private boolean disponible;
 
     // el precio
-    BigDecimal precio;
+    private BigDecimal precio;
 
     // veces vendido
-    long numVecesVendido;
+    private long numVecesVendido;
 
     // link pero sin mostrar
     @JsonIgnore
-    String linkImagen;
+    private String linkImagen;
+
+    public long getArticuloID() {
+        return ArticuloID;
+    }
+
+    public void setArticuloID(long articuloID) {
+        ArticuloID = articuloID;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public BigDecimal getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(BigDecimal precio) {
+        this.precio = precio;
+    }
+
+    public long getNumVecesVendido() {
+        return numVecesVendido;
+    }
+
+    public void setNumVecesVendido(long numVecesVendido) {
+        this.numVecesVendido = numVecesVendido;
+    }
+
+    public String getLinkImagen() {
+        return linkImagen;
+    }
+
+    public void setLinkImagen(String linkImagen) {
+        this.linkImagen = linkImagen;
+    }
 }

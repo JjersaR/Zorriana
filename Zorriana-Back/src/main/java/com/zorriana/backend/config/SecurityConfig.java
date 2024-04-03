@@ -27,6 +27,7 @@ public class SecurityConfig {
         return security
                 .httpBasic(Customizer.withDefaults()) // se usa para poder ocupar postman
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                //.formLogin(Customizer.withDefaults())
                 .build();
     }
 

@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/zorriana")
-@PreAuthorize("hasRole('VISITANTE')")
+@PreAuthorize("denyAll()")
 public class ZorrianaControllers {
 
     @Autowired
     private IArticulosService articulosService;
 
     @GetMapping("/tienda")
-    @PreAuthorize("hasRole('VISITANTE')")
+    @PreAuthorize("permitAll()")
     public ResponseEntity<?> listarTodo() {
         var listaArticulos = articulosService.findAll();
         return listaArticulos.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(IArticulosMapper.INSTANCE.toDTOListarArt(listaArticulos));

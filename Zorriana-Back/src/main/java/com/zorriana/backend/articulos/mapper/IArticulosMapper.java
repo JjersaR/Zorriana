@@ -14,5 +14,6 @@ public interface IArticulosMapper {
 
     // listar todos
     List<ListarArticulos> toDTOListarArt(List<Articulos> articulos);
+
     ListarArticulos map(Articulos articulos);
 }
