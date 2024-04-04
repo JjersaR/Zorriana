@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.zorriana.backend.categorias.repositoy.ICategoriasRepository;
 import com.zorriana.backend.categorias.service.ICategoriasService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CategoriaServiceImpl implements ICategoriasService {
 
   @Autowired
