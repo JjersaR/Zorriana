@@ -7,13 +7,17 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Repository
 public interface IUsuariosRepository extends JpaRepository<Usuarios, Long> {
 
   @Transactional
   @Query("UPDATE Usuarios u SET u.username = :#{#usuario.username}, u.password ="
       + " :#{#usuario.password}, u.correo = :#{#usuario.correo}, u.telefono ="
-      + " :#{#usuario.telefono} WHERE u.id = :#{#usuario.id}")
+      + " :#{#usuario.telefono} WHERE u.usuarioID = :#{#usuario.usuarioID}")
   @Modifying
   void update(Usuarios usuario);
+
+  Optional<Usuarios> findByUsername(String username);
 }

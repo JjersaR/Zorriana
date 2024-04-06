@@ -4,7 +4,10 @@ import com.zorriana.backend.articulos.entity.Articulos;
 import com.zorriana.backend.articulos.repository.IArticulosRepository;
 import com.zorriana.backend.articulos.service.IArticulosService;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,6 +22,12 @@ public class ArticulosServiceImpl implements IArticulosService {
   }
 
   @Override
+  public Optional<Articulos> findById(Long id) {
+    return repository.findById(id);
+  }
+
+
+  @Override
   public void save(Articulos articulo) {
     repository.save(articulo);
   }
@@ -30,6 +39,9 @@ public class ArticulosServiceImpl implements IArticulosService {
 
   @Override
   public void deleteById(Long id) {
-    repository.deleteById(id);
+    Optional<Articulos> artOp = repository.findById(id);
+    if (artOp.isPresent()) {
+      repository.deleteById(id);
+    }
   }
 }
