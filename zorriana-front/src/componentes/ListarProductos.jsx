@@ -1,41 +1,5 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductosService from "../servicios/ProductosService";
-
-const myProducts = [
-  {
-    id: 1,
-    nombre: "Producto 1",
-    descripcion: "Descripción del producto 1",
-    precio: 1000,
-    disponible: true,
-    numVecesVendido: 10,
-  },
-  {
-    id: 2,
-    nombre: "Producto 2",
-    descripcion: "Descripción del producto 2",
-    precio: 2000,
-    disponible: false,
-    numVecesVendido: 20,
-  },
-  {
-    id: 3,
-    nombre: "Producto 3",
-    descripcion: "Descripción del producto 3",
-    precio: 3000,
-    disponible: true,
-    numVecesVendido: 30,
-  },
-  {
-    id: 4,
-    nombre: "Producto 4",
-    descripcion: "Descripción del producto 4",
-    precio: 4000,
-    disponible: false,
-    numVecesVendido: 40,
-  },
-];
 
 export default function ListarProductos() {
   const [productos, setProductos] = useState([]);
@@ -52,8 +16,8 @@ export default function ListarProductos() {
 
   return (
     <div className="products">
-      {myProducts.map((producto) => (
-        <div key={producto.ArticuloID} className="card ">
+      {productos.map((producto) => (
+        <div key={producto.ArticuloID} className="card">
           <img
             src={producto.linkImagen}
             className="card-img-top center"
