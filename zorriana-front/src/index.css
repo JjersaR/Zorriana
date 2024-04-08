@@ -5,6 +5,19 @@
   --grid-gutter: var(--space-s-l, clamp(1rem, 0.4975rem + 2.5126vw, 2.25rem));
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 :root {
   --step--2: clamp(0.6944rem, 0.6851rem + 0.0466vw, 0.72rem);
   --step--1: clamp(0.8331rem, 0.8088rem + 0.1216vw, 0.9rem);
@@ -79,4 +92,63 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.header {
+  color: black;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-wrapper > div > h3 > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-info a {
+  margin-inline: var(--space-xs);
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-personal {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-personal > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-personal > div i {
+  cursor: pointer;
+}
+
+.nav-personal a,
+i {
+  margin-inline: var(--space-xs);
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
 }
