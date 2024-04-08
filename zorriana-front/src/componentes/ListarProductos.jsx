@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import ProductosService from "../servicios/ProductosService";
 
 export default function ListarProductos() {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        "http://localhost:8080/zorriana/tienda/productos"
-      );
-      setProductos(response.data);
-    };
-    fetchData();
+    ProductosService.getFindAll()
+      .then((response) => {
+        setProductos(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
