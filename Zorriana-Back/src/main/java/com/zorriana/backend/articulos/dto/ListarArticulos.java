@@ -1,13 +1,11 @@
 package com.zorriana.backend.articulos.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;
 
 
 public class ListarArticulos {
     // obtener id sin mostrar
-    @JsonIgnore
     private long ArticuloID;
 
     // obtener nombre
@@ -26,7 +24,6 @@ public class ListarArticulos {
     private long numVecesVendido;
 
     // link pero sin mostrar
-    @JsonIgnore
     private String linkImagen;
 
     public long getArticuloID() {
