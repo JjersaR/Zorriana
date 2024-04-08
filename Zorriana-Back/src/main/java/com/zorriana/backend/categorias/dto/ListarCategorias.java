@@ -1,16 +1,16 @@
 package com.zorriana.backend.categorias.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
 public class ListarCategorias implements Serializable {
-    @JsonIgnore
     private long categoriaID;
 
     @JsonProperty("Nombre")
     private String nombre;
+
+    private String linkImagen;
 
     public long getCategoriaID() {
         return categoriaID;
@@ -26,5 +26,13 @@ public class ListarCategorias implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getLinkImagen() {
+        return linkImagen;
+    }
+
+    public void setLinkImagen(String linkImagen) {
+        this.linkImagen = linkImagen;
     }
 }
