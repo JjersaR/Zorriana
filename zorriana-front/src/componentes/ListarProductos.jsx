@@ -19,7 +19,7 @@ export default function ListarProductos() {
       {productos.map((producto) => (
         <div key={producto.ArticuloID} className="card">
           <img
-            src={producto.link_Imagen}
+            src={producto.linkImagen}
             className="card-img-top center"
             alt={producto.nombre}
           />
