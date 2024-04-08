@@ -18,7 +18,7 @@ export default function ListarCategorias() {
     <div className="products">
       {categorias.map((categoria) => (
         <div key={categoria.categoriaID} className="card">
-          <img />
+          <img src={categoria.linkImagen} alt={categoria.Nombre} />
           <div className="card-body product-card">
             <h5 className="card-title">{categoria.Nombre}</h5>
           </div>
