@@ -5,11 +5,13 @@ export default function ListarCategorias() {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    ProductosService.getCategoriasAll().then((response) => {
-      setCategorias(response.data);
-    }).catch((error) => {
-      console.log(error);
-    });
+    ProductosService.getCategoriasAll()
+      .then((response) => {
+        setCategorias(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
