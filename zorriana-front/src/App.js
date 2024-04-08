@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import ListarCategorias from "./componentes/ListarCategorias";
 import ListarProductos from "./componentes/ListarProductos";
-import Header from "./componentes/Header";
+import Header from "./componentes/Header/Header";
 
 function App() {
   return (
