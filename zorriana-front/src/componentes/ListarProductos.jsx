@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import ProductosService from "../servicios/ProductosService";
+import axios from "axios";
 
 export default function ListarProductos() {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    ProductosService.getFindAll()
-      .then((response) => {
-        setProductos(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const fetchData = async () => {
+      const response = await axios.get(
+        "http://localhost:8080/zorriana/tienda/productos"
+      );
+      setProductos(response.data);
+    };
+    fetchData();
   }, []);
 
   return (
@@ -19,7 +19,7 @@ export default function ListarProductos() {
       {productos.map((producto) => (
         <div key={producto.ArticuloID} className="card">
           <img
-            src={producto.linkImagen}
+            src={producto.link_Imagen}
             className="card-img-top center"
             alt={producto.nombre}
           />
