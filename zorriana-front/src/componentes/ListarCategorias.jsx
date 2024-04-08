@@ -5,18 +5,20 @@ export default function ListarCategorias() {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    ProductosService.getCategoriasAll().then((response) => {
-      setCategorias(response.data);
-    }).catch((error) => {
-      console.log(error);
-    });
+    ProductosService.getCategoriasAll()
+      .then((response) => {
+        setCategorias(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
     <div className="products">
       {categorias.map((categoria) => (
         <div key={categoria.categoriaID} className="card">
-          <img src={categoria.linkImagen} alt={categoria.Nombre}/>
+          <img src={categoria.linkImagen} alt={categoria.Nombre} />
           <div className="card-body product-card">
             <h5 className="card-title">{categoria.Nombre}</h5>
           </div>
