@@ -3,6 +3,7 @@ import "./App.css";
 import ListarCategorias from "./componentes/ListarCategorias";
 import ListarProductos from "./componentes/ListarProductos";
 import Header from "./componentes/Header/Header";
+import Principal from "./paginas/Principal";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Header />
         <div>
           <Routes>
+            <Route path="/" element={<Principal />}></Route>
             <Route
               exact
               path="/zorriana/tienda/productos"

@@ -16,10 +16,11 @@ const Header = () => {
         <nav className="nav-info">
           <NavLink to="/informate">Informate</NavLink>
           <NavLink to="/acerca-de">Acerca de</NavLink>
+          <NavLink to="/zorriana/tienda/productos">Productos</NavLink>
         </nav>
         <div>
           <h3>
-            <NavLink>Zorriana</NavLink>
+            <NavLink to={"/"}>Zorriana</NavLink>
           </h3>
         </div>
         <nav className="nav-personal">

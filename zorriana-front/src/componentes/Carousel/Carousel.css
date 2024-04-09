@@ -1,0 +1,71 @@
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.slide {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 7px #b4b4b4;
+  width: 100%;
+  height: auto;
+  transition: all 1s ease-in-out;
+}
+
+.slide-hidden {
+  display: none;
+}
+
+.arrow {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  color: #fff;
+  filter: drop-shadow(0 0 5px #555);
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.arrow svg {
+  width: 100%;
+  height: auto;
+}
+
+.arrow-left {
+  left: 0.5rem;
+}
+
+.arrow-right {
+  right: 0.5rem;
+}
+
+.indicators {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.indicator {
+  background-color: white;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px #555;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.indicator-inactive {
+  background-color: gray;
+}
+
+.slide-up-fade-in {
+  animation: slideRightFadeIn 0.8s cubic-bezier(0.3, 0.7, 0.3, 1);
+  animation-fill-mode: backwards;
+}
