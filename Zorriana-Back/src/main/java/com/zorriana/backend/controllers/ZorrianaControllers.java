@@ -26,11 +26,11 @@ public class ZorrianaControllers {
     Logger logger = LoggerFactory.getLogger(ZorrianaControllers.class);
 
     @Autowired
-    private  IArticulosService articulosService;
+    private IArticulosService articulosService;
     @Autowired
-    private  ICategoriasArticulosService categoriasArticulosService; // para productos
+    private ICategoriasArticulosService categoriasArticulosService; // para productos
     @Autowired
-    private  ICategoriasService categoriasService; // para categorias
+    private ICategoriasService categoriasService; // para categorias
 
     // listar todos los productos
     @GetMapping("/productos")
